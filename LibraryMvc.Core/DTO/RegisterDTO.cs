@@ -26,5 +26,7 @@ namespace LibraryMvc.Core.DTO
         [Required(ErrorMessage = "Confirm Password can't be blank")]
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Password and confirm password do not match")]
         public string ConfirmPassword { get; set; } = string.Empty;
+
+        public string? UserType { get; set; }
     }
 }
