@@ -24,7 +24,8 @@ namespace LibraryMvc.UI.Controllers
         //[Authorize("NotAuthorized")]
         public IActionResult Register()
         {
-            return View();
+            var model = new RegisterDTO();
+            return View(model);
         }
 
 

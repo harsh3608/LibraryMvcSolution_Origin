@@ -4,5 +4,32 @@
     ViewBag.CurrentUrl = "~/Account/Register";
 }
 
+<div class="form-container">
+    Already Registered? <a asp-action="Login" asp-controller="Account" class="link-hover">Login</a>
+    <h2 class="text-large">Register</h2>
+
+    <form asp-controller="Account" asp-action="Register" method="post">
+
+        @*PersonName*@
+        @*<div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="PersonName" class="form-label pt">Name</label>
+            </div>
+        </div>*@
+
+        @*Email*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Email" class="form-label pt">Email</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Email" class="form-input" />
+                <span asp-validation-for="Email" class="text-red"></span>
+            </div>
+        </div>
+
+    </form>
+
+
 
 </div>
