@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LibraryMvc.Core\LibraryMvc.Core.csproj" />
     <ProjectReference Include="..\LibraryMvc.Infrastructure\LibraryMvc.Infrastructure.csproj" />
     <ProjectReference Include="..\LibraryMvc.Services\LibraryMvc.Services.csproj" />
