@@ -7,13 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibraryMvc.Core\LibraryMvc.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="RepositoryInterfaces\" />
-    <Folder Include="DatabaseContext\" />
+    <Folder Include="ServiceInterfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
