@@ -11,5 +11,6 @@ namespace LibraryMvc.Core.IdentityEntities
     {
         public string? PersonName { get; set; }
         public string? Gender { get; set; }
+        public string? UserType { get; set; }
     }
 }
