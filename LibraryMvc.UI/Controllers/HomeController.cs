@@ -1,4 +1,4 @@
-﻿using LibraryMvc.UI.Models;
+﻿using LibraryMvc.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

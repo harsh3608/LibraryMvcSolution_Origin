@@ -1,4 +1,4 @@
-namespace LibraryMvc.UI.Models
+namespace LibraryMvc.Core.Models
 {
     public class ErrorViewModel
     {
