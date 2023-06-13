@@ -35,7 +35,16 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-app.UseRouting();
-app.MapControllers();
+
+app.UseRouting(); //Identifying action method base route
+
+app.UseAuthentication(); //Reading Identity Cookie
+app.UseAuthorization(); //Validates access permissions of the user
+
+app.MapControllers();//Execute the filter pipeline (action + filters)
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
