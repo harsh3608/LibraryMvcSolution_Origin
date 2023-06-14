@@ -54,14 +54,18 @@
         </main>
     </div>
 
-    <footer class="footer " style="position: fixed; bottom: 0; width: 100%; white-space: nowrap; line-height: 60px; background-color: black; color: white;">
-        <div class="container">
+    <footer class="footer d-flex" style="position: absolute; bottom: 0; width: 100%; white-space: nowrap; line-height: 60px; background-color: black; color: white;">
+        <div >
             &copy; 2023 - SecondMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            <div>
-                <span class="material-icons">
-                    diversity_1
-                </span>&nbsp;&nbsp; <a asp-area="" asp-controller="Home" asp-action="About">About</a>
-            </div>
+            
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div>
+            <span class="material-icons">
+                diversity_1
+            </span>&nbsp;&nbsp; <a asp-area="" asp-controller="Home" asp-action="About">About</a>
         </div>
         
     </footer>

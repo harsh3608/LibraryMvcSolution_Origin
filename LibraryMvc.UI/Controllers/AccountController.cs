@@ -48,23 +48,48 @@ namespace LibraryMvc.UI.Controllers
                 return View(registerDTO);
             }
 
-            ApplicationUser user = new ApplicationUser() { 
-                Email = registerDTO.Email, 
-                PhoneNumber = registerDTO.PhoneNumber, 
-                UserName = registerDTO.Email, 
+            ApplicationUser user = new ApplicationUser() {
+                Email = registerDTO.Email,
+                PhoneNumber = registerDTO.PhoneNumber,
+                UserName = registerDTO.Email,
                 PersonName = registerDTO.PersonName,
                 Gender = registerDTO.Gender,
+                UserType = nameof(UserTypeOptions.User)
             };
 
             IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);
             if (result.Succeeded)
             {
-                //ToDo: user type logic comes here
+                //Check status of radio button
+                if (registerDTO.UserType == nameof(UserTypeOptions.Admin))
+                {
+                    //Create 'Admin' role
+                    if (await _roleManager.FindByNameAsync(UserTypeOptions.Admin.ToString()) is null)
+                    {
+                        ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.Admin.ToString() };
+                        await _roleManager.CreateAsync(applicationRole);
+                    }
+
+                    //Add the new user into 'Admin' role
+                    await _userManager.AddToRoleAsync(user, UserTypeOptions.Admin.ToString());
+                }
+                else
+                {
+                    //Create 'User' role
+                    if (await _roleManager.FindByNameAsync(UserTypeOptions.User.ToString()) is null)
+                    {
+                        ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.User.ToString() };
+                        await _roleManager.CreateAsync(applicationRole);
+                    }
+
+                    //Add the new user into 'User' role
+                    await _userManager.AddToRoleAsync(user, UserTypeOptions.User.ToString());
+                }
 
                 //Sign in
                 await _signInManager.SignInAsync(user, isPersistent: false);
 
-                return RedirectToAction(nameof(HomeController.Index));
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -116,7 +141,8 @@ namespace LibraryMvc.UI.Controllers
                 {
                     return LocalRedirect(ReturnUrl);
                 }
-                return RedirectToAction(nameof(HomeController.Index));
+                //return RedirectToAction(nameof(HomeController.Index));
+                return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("Login", "Inalid email or password");
