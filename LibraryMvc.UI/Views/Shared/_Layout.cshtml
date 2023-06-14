@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - One Library</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LibraryMvc.UI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StyleSheet.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 d-flex flex-row">
+    <header style="background-color: black; ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  box-shadow mb-3 d-flex flex-row ">
             <div class="container-fluid  align-self-start">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">One Library</a>
+                <a style="color: white;" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">One Library</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,13 +23,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
@@ -36,10 +39,10 @@
                         <ul class="navbar-nav flex-grow-1">
                             
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">SignUp</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">SignUp</a>
                             </li>
                         </ul>
                     </div>
@@ -53,15 +56,20 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted" style="position: fixed;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
-  background-color: white;">
-        <div class="container">
+    <footer class="footer d-flex" style="position: absolute; bottom: 0; width: 100%; white-space: nowrap; line-height: 60px; background-color: black; color: white;">
+        <div >
             &copy; 2023 - SecondMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            
         </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div>
+            <span class="material-icons">
+                diversity_1
+            </span>&nbsp;&nbsp; <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+        </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
