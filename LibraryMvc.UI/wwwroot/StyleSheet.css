@@ -2,23 +2,6 @@
     flex: 1 1 auto;
 }
 
-.head-bar{
-    display: flex;
-}
-
-body {
-    background-color: darkslateblue;
-}
-
-.title {
-    color: black;
-    border: dashed;
-    border-color: orange;
-    text-align: center;
-    height: auto;
-    width: auto;
-}
-
 
 
 
@@ -337,7 +320,7 @@ body {
 
         .list > li:hover {
             background-color: #1383a4;
-            color: #ffffff;
+            color: red;
         }
 
     .list a:link, .list a:visited {
