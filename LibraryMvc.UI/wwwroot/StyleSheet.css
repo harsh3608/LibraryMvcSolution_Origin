@@ -2,7 +2,9 @@
     flex: 1 1 auto;
 }
 
-
+nav-item:hover{
+    background-color:aquamarine;
+}
 
 
 
@@ -320,7 +322,7 @@ body {
 
         .list > li:hover {
             background-color: #1383a4;
-            color: red;
+            color: #ffffff;
         }
 
     .list a:link, .list a:visited {
