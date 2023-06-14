@@ -20,7 +20,6 @@ namespace LibraryMvc.UI.Controllers
         }
 
 
-        [HttpGet]
         //[Authorize("NotAuthorized")]
         public IActionResult Register()
         {

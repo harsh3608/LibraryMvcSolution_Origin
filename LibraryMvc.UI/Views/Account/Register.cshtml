@@ -11,11 +11,15 @@
     <form asp-controller="Account" asp-action="Register" method="post">
 
         @*PersonName*@
-        @*<div class="form-field flex">
+        <div class="form-field flex">
             <div class="w-25">
                 <label asp-for="PersonName" class="form-label pt">Name</label>
             </div>
-        </div>*@
+            <div class="flex-1">
+                <input asp-for="PersonName" class="form-input" />
+                <span asp-validation-for="PersonName" class="text-red"></span>
+            </div>
+        </div>
 
         @*Email*@
         <div class="form-field flex">
@@ -25,6 +29,65 @@
             <div class="flex-1">
                 <input asp-for="Email" class="form-input" />
                 <span asp-validation-for="Email" class="text-red"></span>
+            </div>
+        </div>
+
+        @*Password*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Password" class="form-label pt">Password</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Password" class="form-input" />
+                <span asp-validation-for="Password" class="text-red"></span>
+            </div>
+        </div>
+
+        @*ConfirmPassword*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="ConfirmPassword" class="form-label pt">Confirm Password</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="ConfirmPassword" class="form-input" />
+                <span asp-validation-for="ConfirmPassword" class="text-red"></span>
+            </div>
+        </div>
+
+        @*Phone*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="PhoneNumber" class="form-label pt">Phone</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="PhoneNumber" class="form-input" />
+                <span asp-validation-for="PhoneNumber" class="text-red"></span>
+            </div>
+        </div>
+
+
+
+
+
+        @*Register button*@
+        <div class="form-field flex">
+            <div class="w-25"></div>
+            <div class="flex-1">
+                <button class="button button-green-back" type="submit">Register</button>
+
+                <div asp-validation-summary="All" class="text-red"></div>
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div class="text-red ml">
+                        <ul>
+                            @foreach (string error in ViewBag.Errors)
+                            {
+                                <li class="ml">@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
             </div>
         </div>
 
