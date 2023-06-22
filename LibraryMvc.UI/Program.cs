@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+//builder.Services.AddControllersWithViews();
 
 //Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
