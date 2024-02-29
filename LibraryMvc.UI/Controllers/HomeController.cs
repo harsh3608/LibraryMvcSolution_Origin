@@ -15,14 +15,17 @@ namespace LibraryMvc.UI.Controllers
 
         public IActionResult About()
         {
-
             return View();
         }
 
         public IActionResult Privacy()
         {
+            return View();
+        }
 
-
+        
+        public IActionResult Books()
+        {
             return View();
         }
 
